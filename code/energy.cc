@@ -1,7 +1,24 @@
 #include "dna.h"
+#include <string>
+#include <vector>
+#include <iostream>
+#include <stdlib.h>
+#include <random>
+#include <time.h>
+#include <algorithm>
+#include <fstream> 
+#include <functional>
+#include <numeric>
+#include <iomanip>
+#include <map>
+#include <math.h>
+#include <iomanip>
+#include <sstream>
+#include<iterator>
+#include <sys/stat.h>
 
 using namespace std;
-void energy(){
+int main(){
     int L1;
     cout << "Please enter length of sequence (int) \n";
     cin >> L1;
@@ -13,14 +30,14 @@ void energy(){
     int iterations1;
     cout << "Please enter iterations for MCMC (int) \n";
     cin >> iterations1;
-
+    /*
     bool animate;
     cout << "Do you want to save snapshots for animation? (boolean) \n";
     cin >> animate;
-
+    */
     Sequence state1(L1,BJ1,iterations1);
 
-    vector<int> i_seq=state1.init_seq();
+    vector<int> i_seq=state1.init_seq(); 
     ofstream out;
     ofstream out2;
     out.open("/home/jtrichm2/Evolution/nuc_"+to_string(L1)+"_beta_"+to_string(BJ1)+"_iterations_"+to_string(iterations1)+".txt", ios::app);
@@ -36,20 +53,22 @@ void energy(){
             int E=state1.totE();
             cout<<"Energy: "<< E<<endl;
             out << iters << " " << E << "\n";
-            if (animate){
-                string str_new=str;
-                str_new+=to_string(iters);
-                str_new+=".txt";
-                out2.open(str_new);
-                out2 <<state1.get_seq_str();
-            }
+            
+            string str_new=str;
+            str_new+=to_string(iters);
+            str_new+=".txt";
+            out2.open(str_new);
+            out2 <<state1.get_seq_str();
+            
         }  
-        if (animate) out2.close();
-        
+        out2.close();
+       
     }
     out.close(); 
-    return;
+    return 0;
 }
 
+/*
 int main(){energy();
 }
+*/

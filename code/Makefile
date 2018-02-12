@@ -1,6 +1,6 @@
 EXENAME = evolve
 EX_1 = dna
-EX_2 = heat
+EX_2 = energy
 EX_3 = phase
 
 OBJS = dna.o energy.o phase_transition.o
@@ -23,10 +23,13 @@ phase_transition : $(EX_3)
 
 $(EXENAME) : $(OBJS)
 	$(CC) $(LFLAGS) $(OBJS) -o $(EXENAME)
+
 $(EX_1) : $(OBJS_1)
 	$(CC) $(LFLAGS) $(OBJS_1) -o $(EX_1)
+
 $(EX_2) : $(OBJS_2)
 	$(CC) $(LFLAGS) $(OBJS_2) -o $(EX_2)
+
 $(EX_3) : $(OBJS_3)
 	$(CC) $(LFLAGS) $(OBJS_3) -o $(EX_3)
 

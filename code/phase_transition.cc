@@ -30,7 +30,7 @@ bool fileExists(const string& filename)
 }
 
 
-void phase_transition(){
+int main(){
     int L1;
     cout << "Please enter length of sequence (int) \n";
     cin >> L1;
@@ -78,7 +78,7 @@ void phase_transition(){
         {
             cout<<"B of: "<<Bstep<<" "<<i<<endl;
             state1.alpha();
-            if ((i%50==0) and (i>(state1.getIterations()-500)))
+            if ((i%50==0) and (i>=(state1.getIterations()-500)))
             {
                 int M2=state1.totM2();
                 m2_temp+=M2;
@@ -90,8 +90,10 @@ void phase_transition(){
         out << Bstep<<" "<<m2avg2<<endl;
         out.close();
     }
-    return;
+    return 0;
 }
+/*
 int main(){ phase_transition();
 
 }
+*/

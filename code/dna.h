@@ -1,3 +1,5 @@
+#ifndef DNA_H_
+
 #include <string>
 #include <vector>
 #include <iostream>
@@ -6,6 +8,7 @@
 #include <time.h>
 #include <algorithm>
 #include <fstream> 
+
 using namespace std;
 class Sequence 
 {
@@ -33,7 +36,8 @@ class Sequence
         double RandDouble(double, double);  
         int RandInt(int);
         void set_seq(vector<int>); 
-        string get_seq_str();           
+        string get_seq_str();     
+             
         Sequence(int L1, float BJ1, int iterations1)
         {
             L=L1;
@@ -61,3 +65,4 @@ class Sequence
         }
         
 };
+#endif
