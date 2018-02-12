@@ -100,7 +100,7 @@ int Sequence::totE(){
     return Etot;   
 }
 
-int Sequence::totM2(){
+float Sequence::totM2(){
     //A=1=(1,0), T=2=(-1,0), G=4=(0,i),C=5=(0,-i). Therefore max m^2 is 2.
     vector<int> seq_vec=get_current_seq();
     int Mtot=0;
@@ -129,7 +129,8 @@ int Sequence::totM2(){
         for (int hi = 0; hi < 2; hi++) accum += NN_c[hi] * NN_c[hi];
         Mtot+=accum;
     }
-    return Mtot/L;   
+    float m2_=Mtot/L;
+    return m2_;   
 }
 
 void Sequence::update_seq(int idx){

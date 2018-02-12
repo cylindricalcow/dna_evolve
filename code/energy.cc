@@ -40,7 +40,9 @@ int main(){
     vector<int> i_seq=state1.init_seq(); 
     ofstream out;
     ofstream out2;
+    ofstream out3;
     out.open("/home/jtrichm2/Evolution/nuc_"+to_string(L1)+"_beta_"+to_string(BJ1)+"_iterations_"+to_string(iterations1)+".txt", ios::app);
+    out3.open("/home/jtrichm2/Evolution/nuc_"+to_string(L1)+"_beta_"+to_string(BJ1)+"_iterations_"+to_string(iterations1)+"_m2.txt", ios::app);
     string str="/home/jtrichm2/Evolution/sequences/anim_";
     for (int iters=0; iters<iterations1;iters++)
     {
@@ -51,9 +53,10 @@ int main(){
         if (iters%spacing==0){
             
             int E=state1.totE();
+            float m2=state1.totM2();
             cout<<"Energy: "<< E<<endl;
             out << iters << " " << E << "\n";
-            
+            out3 << iters << " " << m2 << "\n";
             string str_new=str;
             str_new+=to_string(iters);
             str_new+=".txt";
@@ -65,6 +68,7 @@ int main(){
        
     }
     out.close(); 
+    out3.close();
     return 0;
 }
 

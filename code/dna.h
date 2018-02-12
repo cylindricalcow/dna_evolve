@@ -24,7 +24,7 @@ class Sequence
     public:
         void test();           //test to see if modding state_vec changes current_state (it doesn't)
         int totE();                             //calc sum(si*sj) for NN_ij of state vector
-        int totM2();           //analog of m2 where A=(1,0), T=(-1,0), G=(0,i),C=(0,-i). Calc only with NN then sum square            
+        float totM2();           //analog of m2 where A=(1,0), T=(-1,0), G=(0,i),C=(0,-i). Calc only with NN then sum square            
         vector<int> init_seq();            //intialize vector with length n^2 
         void update_seq(int);                 //update state of cell by flipping state
         vector<int> get_current_seq();            //get vector of current state
