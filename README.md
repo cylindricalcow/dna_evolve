@@ -10,7 +10,7 @@ or not a mutation will happen is done by calculating the energy of the old and n
 have energy -1, bonds between X->X, for any X, have energy 0, and bonds between unfavorable pairs (e.g. A->G) have energy 1. Total energy
 of a sequence is calculated by adding up the energy of all the pairs (smaller the better). After the energy calculation is done, 
 Metropolis-Hastings algorithm is used to calculate if the mutation will happen i.e. alpha(c' -> c)=e^{-Beta*J*E_new}/e^{-Beta*J*E_new}, 
-where J is the coupling constant and Beta=1/k_b*T. Alpha > 1 is automatically accepted. Alpha < 1 is accpeted with probability alpha.
+where J is the coupling constant and Beta=1/k_b*T. Alpha > 1 is automatically accepted. Alpha < 1 is accepted with probability alpha.
 
 Phase Transition
 
