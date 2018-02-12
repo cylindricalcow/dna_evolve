@@ -39,11 +39,11 @@ if plot_e:
     nuc='100'
     step='03'
     iters='10000'
-    df1 = pd.read_csv("/home/jtrichm2/Evolution/nuc_"+nuc+"_beta_"+step+"_iterations_"+iters+".txt", sep=" ", names=['steps','Energy'])
-    df2 = pd.read_csv("/home/jtrichm2/Evolution/nuc_"+nuc+"_beta_"+step+"_iterations_"+iters+"_m2.txt", sep=" ", names=['steps','m2'])
+    df1 = pd.read_csv("/home/jtrichm2/Evolution/data/nuc_"+nuc+"_beta_"+step+"_iterations_"+iters+"_2.txt", sep=" ", names=['steps','Energy'])
+    df2 = pd.read_csv("/home/jtrichm2/Evolution/data/nuc_"+nuc+"_beta_"+step+"_iterations_"+iters+"_m2.txt", sep=" ", names=['steps','m2'])
     plt.plot(df1['steps'],df1['Energy'])
-    plt.xticks(np.arange(0,10000,1000))
-    plt.xlim(0,10000)
+    plt.xticks(np.arange(0,2000,200))
+    plt.xlim(0,2000)
     plt.xlabel('Steps')
     plt.ylabel('Energy')
     plt.title(nuc+' nucleotides with Beta='+step)
@@ -51,8 +51,8 @@ if plot_e:
     plt.show()
 
     plt.plot(df2['steps'],df2['m2']/10)
-    #plt.xticks(np.arange(0,10000,1000))
-    #plt.xlim(0,100000)
+    plt.xticks(np.arange(0,2000,200))
+    plt.xlim(0,2000)
     plt.xlabel('Steps')
     plt.ylabel('m2')
     plt.title(nuc+' nucleotides with Beta='+step)
